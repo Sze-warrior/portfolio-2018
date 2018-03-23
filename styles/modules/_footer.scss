@@ -1,0 +1,58 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+
+.footer{
+	border-top: 1px solid $color-grey-mid;
+	@include display-flex();
+	@include justify-content-end();
+	padding-left: $grid-gutter-width/2;
+	padding-right: $grid-gutter-width/2;
+	margin-top: 20px;
+
+	.footer-items-container{
+		@include display-flex();	
+		@include justify-content-space-between();
+		min-width: $container-nav-items;
+		padding-left: 0;
+	    margin-top: 0;
+	    margin-bottom: 0;
+		padding-top: 30px;
+		padding-bottom: 40px;
+
+		&.active{
+			display: block;
+			margin-top: 20px;
+		    border-top: 1px solid $color-grey-light;
+		}
+
+		@media screen and (max-width: $media-query-mobile){
+			padding-top: 0;
+		}
+
+		.footer-item{
+			padding: 0;
+			list-style-type: none;
+			font-size: 18px;
+			padding-left: 0;
+			color: $brand-color;
+			@include transition(0.2s);
+			margin-bottom: 0;
+
+			&:hover{
+				color: darken($brand-color, 20%);
+				cursor: pointer;
+			    @include transition(0.2s);
+			}
+
+		    @media screen and (max-width: $media-query-mobile){
+		    	padding: 20px;
+		    }
+		}
+	}
+
+    @media screen and (max-width: $media-query-mobile){
+		@include justify-content-center();
+    }
+
+}

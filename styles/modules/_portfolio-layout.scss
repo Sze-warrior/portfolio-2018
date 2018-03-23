@@ -1,0 +1,82 @@
+@import "../mixins.scss";
+
+.portfolio-row{
+	@include display-flex();
+	@include justify-content-space-around();
+	@include flex-direction($direction: row);
+	padding: $grid-gutter-width/2;
+	opacity: 0;
+	@include animation(animatePortfolioContent 0.5s ease-in-out);
+	@include animation-fill-mode(forwards);
+	@include animation-delay(0.5s);
+	@include keyframes(animatePortfolioContent) {
+	    from {opacity: 0;}
+	    to {opacity: 1;}		
+	}
+
+	@media screen and (max-width: $media-query-mobile){
+		@include flex-direction(column);
+		padding: 0;
+	}
+}	
+
+.portfolio-item{
+    position: relative;
+	height: 100%;
+	width: 100%;
+	margin-bottom: 20px;
+    box-shadow: none;
+    @include transition(0.2s);
+    background-color: none;
+
+    &:hover{
+	    cursor: pointer;
+	    @include transition(0.2s);
+
+	    .portfolio-overlay{
+	    	opacity: 0.9;
+		    @include transition(0.2s);	
+	    }
+
+    }
+
+	&:last-child{
+		margin-left: $grid-gutter-width;
+		margin-top: 60px;
+	}
+
+	@media screen and (max-width: $media-query-mobile){
+		height: 100%;
+		width: 100%;
+
+		&:last-child{
+			margin-left: 0;
+			margin-top: 0;
+		}
+	}
+}
+
+
+.portfolio-overlay{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: white;
+	opacity: 0;
+	padding: 1px;
+	@include transition(0.2s);
+	@include display-flex();
+	@include justify-content-center();	
+	@include align-items(center);
+
+	.portfolio-overlay-title{
+		font-weight: $font-weight-light;
+    	font-size: $portfolio-overlay-title;
+	    color: $brand-color;
+	    text-decoration: underline;
+	}
+
+	&:hover{
+		cursor: pointer;
+	}	
+}

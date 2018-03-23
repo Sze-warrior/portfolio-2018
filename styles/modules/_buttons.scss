@@ -1,0 +1,43 @@
+@import "../variables.scss";
+@import "../mixins.scss";
+
+
+.btn-default{
+	width: 280px;
+	height: 44px;
+	font-size: $font-size-base;
+	background-color: $brand-color;
+	border: 2px solid $brand-color;
+	color: white;
+	@include border-radius(4px);
+	text-align: center;
+    @include transition(0.2s);
+    font-weight: $font-weight-heavy;
+    line-height: 44px;
+
+	&:hover{
+		background-color: darken($brand-color, 20%);
+		border-color: darken($brand-color, 20%);
+		@include transition(0.2s);
+		cursor: pointer;
+	}
+
+	@media screen and (max-width: $media-query-mobile){
+		width: 260px;
+	}
+}
+
+.btn-ghost{
+	background-color: white;
+	color: $brand-color;
+
+	&:hover{
+		color: white;
+		cursor: pointer;
+	}
+}
+
+.btn-center{
+	margin: 40px auto;
+	display: block;
+}

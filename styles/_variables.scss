@@ -1,0 +1,36 @@
+//Media queries
+$media-query-mobile: 767px;
+
+//Layout
+$container-width: 960px;
+$container-intro-height-desktop: 100px;
+$container-intro-height-mobile: 160px;
+$grid-gutter-width: 40px;
+$body-min-height: 100vh;
+
+
+//Header 
+$container-nav-items: 300px;
+
+//Typography
+$header-title-desktop: 28px;
+$header-title-mobile: 26px;
+$header-h3-desktop: 22px;
+
+$intro-font-desktop: 26px;
+$intro-font-mobile: 24px;
+
+$portfolio-overlay-title: 24px;
+
+$btn-mobile-menu: 18px;
+$font-size-base: 18px;
+
+$font-weight-light: 300;
+$font-weight-heavy: 700;
+
+
+//Colors
+$brand-color: #2d81c1;
+$color-grey-light: #e2e2e2;
+$color-grey-mid: #cccccc;
+$color-grey-dark: #4e4e4e;
