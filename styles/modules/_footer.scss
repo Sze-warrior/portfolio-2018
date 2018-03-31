@@ -8,7 +8,7 @@
 	@include justify-content-end();
 	padding-left: $grid-gutter-width/2;
 	padding-right: $grid-gutter-width/2;
-	margin-top: 20px;
+	margin-top: 40px;
 
 	.footer-items-container{
 		@include display-flex();	
